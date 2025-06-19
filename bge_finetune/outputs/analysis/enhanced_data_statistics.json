@@ -1,0 +1,20 @@
+{
+  "dataset_splits": {
+    "train": 4935,
+    "eval": 1058,
+    "test": 1058
+  },
+  "sample_composition": {
+    "total_positive": 4148,
+    "total_negative": 2903,
+    "train_positive": 2903,
+    "train_negative": 2032
+  },
+  "hard_negative_enabled": true,
+  "strategies_used": [
+    "semantic",
+    "keyword",
+    "tfidf",
+    "cross_domain"
+  ]
+}
