@@ -1,0 +1,18 @@
+{
+  "model_path": "models/finetuned_bge_20250616_211201",
+  "base_model": "models/bge-large-zh-v1.5",
+  "training_config": {
+    "base_model": "models/bge-large-zh-v1.5",
+    "batch_size": 8,
+    "num_epochs": 3,
+    "learning_rate": 2e-05,
+    "max_grad_norm": 1.0
+  },
+  "training_stats": {
+    "train_samples": 4935,
+    "eval_samples": 1058,
+    "train_positive_ratio": 0.5882472137791287,
+    "eval_positive_ratio": 0.5888468809073724
+  },
+  "timestamp": "2025-06-16T21:26:45.564506"
+}
