@@ -1,0 +1,117 @@
+INFO:__main__:使用GPU训练: NVIDIA GeForce RTX 3090                                                                                                
+INFO:__main__:GPU内存: 25.2 GB                                                                                                                    
+INFO:__main__:训练配置:                                                                                                                           
+INFO:__main__:  base_model: models/bge-large-zh-v1.5                                                                                              
+INFO:__main__:  batch_size: 8                                                                                                                     
+INFO:__main__:  num_epochs: 3                                                                                                                     
+INFO:__main__:  learning_rate: 2e-05                                                                                                              
+INFO:__main__:  max_grad_norm: 1.0                                                                                                                
+INFO:__main__:加载预处理数据...                                                                                                                   
+INFO:__main__:数据加载完成: 训练集4935, 验证集1058, 测试集1058                                                                                    
+INFO:__main__:==================================================                                                                                  
+INFO:__main__:开始模型训练                                                                                                                        
+INFO:__main__:==================================================                                                                                  
+INFO:__main__:初始化模型和损失函数...                                                                                                             
+INFO:__main__:加载预训练模型: models/bge-large-zh-v1.5                                                                                            
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cuda:0                              
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: models/bge-large-zh-v1.5
+INFO:__main__:模型加载成功                                               
+INFO:__main__:损失函数设置完成                                           
+INFO:__main__:训练参数: 批次大小=8, 训练轮数=3, 学习率=2e-05             
+INFO:__main__:创建评估器...                                              
+INFO:__main__:评估器创建完成: 623 个查询, 623 个文档            
+INFO:__main__:总训练步数: 1851, Warmup步数: 185                 
+INFO:__main__:模型将保存到: models/finetuned_bge_20250616_211201
+INFO:__main__:开始训练...
+WARNING:sentence_transformers.training_args:Currently using DataParallel (DP) for multi-gpu training, while DistributedDataParallel (DDP) is recom
+mended for faster training. See https://sbert.net/docs/sentence_transformer/training/distributed.html for more information.
+ 33%|███████████████████████████████████▋                                                                       | 103/309 [04:43<09:11,  2.68s/it]
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Information Retrieval Evaluation of the model on the validation dataset in epo
+ch 1.0 after 103 steps:
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 13.15it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:05<00:00,  3.34it/s]
+Corpus Chunks: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:06<00:00,  6.07s/it]
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Queries: 623████████████████████████████████████| 1/1 [00:06<00:00,  6.07s/it]
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Corpus: 623
+
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Score-Function: cosine
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@1: 66.29%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@3: 82.66%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@5: 86.36%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@10: 90.69%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@1: 66.29%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@3: 27.55%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@5: 17.27%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@10: 9.07%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@1: 66.29%                                                              
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@3: 82.66%                                                              
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@5: 86.36%                                                              
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@10: 90.69%                                                             
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:MRR@10: 0.7538                                                                
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:NDCG@10: 0.7913                                                               
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:MAP@100: 0.7572                                                               
+INFO:sentence_transformers.SentenceTransformer:Save model to models/finetuned_bge_20250616_211201                                                 
+ 67%|███████████████████████████████████████████████████████████████████████▎                                   | 206/309 [09:40<04:27,  2.60s/it]
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Information Retrieval Evaluation of the model on the validation dataset in epo
+ch 2.0 after 206 steps:                                                                                                                           
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 13.14it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:05<00:00,  3.35it/s]
+Corpus Chunks: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:06<00:00,  6.06s/it]
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Queries: 623████████████████████████████████████| 1/1 [00:06<00:00,  6.06s/it]
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Corpus: 623
+                                                                         
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Score-Function: cosine
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@1: 69.82%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@3: 84.59%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@5: 87.64%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@10: 91.01%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@1: 69.82%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@3: 28.20%                                    
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@5: 17.53%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@10: 9.10%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@1: 69.82%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@3: 84.59%                                                              
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@5: 87.64%                                                              
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@10: 91.01%                                                             
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:MRR@10: 0.7793                                                                
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:NDCG@10: 0.8116
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:MAP@100: 0.7824
+INFO:sentence_transformers.SentenceTransformer:Save model to models/finetuned_bge_20250616_211201
+ 94%|████████████████████████████████████████████████████████████████████████████████████████████████████▊      | 291/309 [13:45<00:46,  2.60s/it]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 309/309 [14:34<00:00,  2.60s/it]
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Information Retrieval Evaluation of the model on the validation dataset in epo
+ch 3.0 after 309 steps:                                                                                                                           
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 13.06it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 20/20 [00:05<00:00,  3.35it/s]
+Corpus Chunks: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:06<00:00,  6.05s/it]
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Queries: 623████████████████████████████████████| 1/1 [00:06<00:00,  6.04s/it]
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Corpus: 623                                                                   
+                                                                                                                                                  
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Score-Function: cosine                                                        
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@1: 67.74%                                                            
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@3: 80.58%                                                            
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@5: 84.11%                                                            
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Accuracy@10: 87.00%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@1: 67.74%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@3: 26.86%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@5: 16.82%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Precision@10: 8.70%                                                           
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@1: 67.74%                                                              
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@3: 80.58%                                                              
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@5: 84.11%                                                              
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:Recall@10: 87.00%
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:MRR@10: 0.7491
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:NDCG@10: 0.7788       
+INFO:sentence_transformers.evaluation.InformationRetrievalEvaluator:MAP@100: 0.7534   
+{'train_runtime': 881.9333, 'train_samples_per_second': 16.787, 'train_steps_per_second': 0.35, 'train_loss': 0.05633099873860677, 'epoch': 3.0}  
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 309/309 [14:41<00:00,  2.85s/it]
+INFO:__main__:模型训练完成!                                                                                                                       
+INFO:__main__:最佳模型保存在: models/finetuned_bge_20250616_211201                                                                                
+INFO:__main__:训练配置已保存到: models/finetuned_bge_20250616_211201/training_config.json                                  
+INFO:__main__:==================================================                                                                                  
+INFO:__main__:训练流程完成!                                                                                                                       
+INFO:__main__:==================================================                                                                                  
+                                                                                                                                                  
+训练完成!                                                                                                                                         
+模型保存位置: models/finetuned_bge_20250616_211201                                                                                                
+下一步运行: python model_evaluation.py

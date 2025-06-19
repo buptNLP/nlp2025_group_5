@@ -1,0 +1,62 @@
+INFO:__main__:==================================================                                                                                  
+INFO:__main__:开始模型评估                                               
+INFO:__main__:==================================================                                                                                  
+INFO:__main__:加载测试数据...
+INFO:__main__:测试数据加载完成: 1058 个样本                                                                                                       
+INFO:__main__:加载模型...                                                                                                                         
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cuda:0
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: models/bge-large-zh-v1.5                         
+INFO:__main__:原始模型加载完成
+INFO:__main__:找到最新模型: models/finetuned_bge_20250616_211201                                                                                  
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cuda:0  
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: models/finetuned_bge_20250616_211201
+INFO:__main__:微调模型加载完成: models/finetuned_bge_20250616_211201
+INFO:__main__:评估原始模型...                                                                                                                     
+INFO:__main__:计算模型相似度...                                          
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 34/34 [00:03<00:00,  8.99it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 34/34 [00:09<00:00,  3.44it/s]
+INFO:__main__:评估微调模型...                                                                                                                     
+INFO:__main__:计算模型相似度...                                          
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 34/34 [00:03<00:00,  9.86it/s]
+Batches: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 34/34 [00:10<00:00,  3.38it/s]
+INFO:__main__:计算评估指标...                                                                                                                     
+                                    
+================================================================================                                                
+模型性能对比结果  
+================================================================================                                    
+指标                        原始模型         微调模型         绝对提升         相对提升        
+--------------------------------------------------------------------------------                                                                
+accuracy                  0.8885       0.9518       0.0633       7.13        %
+best_accuracy             0.8979       0.9622       0.0643       7.16        %                                             
+auc_approx                0.9410       0.9886       0.0476       5.06        %  
+similarity_separation     0.2787       0.7817       0.5030       180.45      %                                                   
+avg_positive_similarity   0.7062       0.8977       0.1915       27.12       %
+avg_negative_similarity   0.4274       0.1160       -0.3115      -72.87      %             
+--------------------------------------------------------------------------------
+best_threshold            0.5300       0.6200       0.0900       16.98       %          
+positive_median           0.7132       0.9272       0.2140       30.00       %
+positive_q75              0.7806       0.9575       0.1769       22.66       %               
+positive_q25              0.6364       0.8716       0.2352       36.95       %
+negative_median           0.4096       0.0204       -0.3891      -95.01      %
+negative_q75              0.4809       0.1770       -0.3038      -63.19      %
+negative_q25              0.3505       -0.0366      -0.3872      -110.44     %     
+================================================================================
+                                                                                                                                                  
+关键改进总结:     
+• 准确率提升: +7.13%                                                                                                                              
+• 相似度分离度提升: +0.5030                                                                                                                       
+• 负样本相似度降低: 72.87%                                                                                                                        
+INFO:__main__:创建可视化图表...                                                                                                                   
+/home/Userlist/by/finetune_hard/model_evaluation.py:323: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_
+labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11. 
+  box_plot = ax3.boxplot(data_to_plot, labels=labels, patch_artist=True)                                                                          
+INFO:__main__:可视化图表已保存: outputs/evaluation/plots/model_comparison_20250616_212853.png
+INFO:__main__:找到最新模型: models/finetuned_bge_20250616_211201                                                                                  
+INFO:__main__:评估结果已保存: outputs/evaluation/evaluation_results_20250616_212854.json
+INFO:__main__:==================================================                                                                                  
+INFO:__main__:评估完成!                                                                                                                           
+INFO:__main__:==================================================                                                                                  
+                                                                                                                                                  
+评估完成!                                                                                                                                         
+详细结果已保存到: outputs/evaluation/evaluation_results_20250616_212854.json  
+可视化图表: outputs/evaluation/plots/model_comparison_20250616_212853.png

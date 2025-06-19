@@ -1,0 +1,76 @@
+INFO:__main__:困难负样本配置:
+INFO:__main__:  enabled: True
+INFO:__main__:  strategies: ['semantic', 'keyword', 'tfidf', 'cross_domain']
+INFO:__main__:  ratio_to_positive: 0.8
+INFO:__main__:  random_negative_ratio: 0.3
+INFO:__main__:  use_pretrained_model: True
+INFO:__main__:  model_path: models/bge-large-zh-v1.5
+INFO:__main__:============================================================
+INFO:__main__:开始增强版数据准备流程
+INFO:__main__:============================================================
+INFO:__main__:开始加载数据...
+INFO:__main__:数据加载完成: 827 篇文章, 1832 条QA对
+INFO:__main__:开始数据清洗和质量验证...
+INFO:__main__:数据清洗完成: QA对 1832 -> 1830, 文章 827 -> 825
+INFO:__main__:去重完成: QA对 1830 -> 1830, 文章 825 -> 822
+INFO:__main__:开始创建训练样本...
+INFO:__main__:构建正样本对...
+INFO:__main__:从QA对构建正样本: 1830 对
+INFO:__main__:从文档构建正样本: 2318 对
+INFO:__main__:总正样本对数: 4148
+INFO:__main__:开始构建增强负样本对...
+INFO:__main__:困难负样本挖掘器初始化完成
+INFO:__main__:目标负样本分布: 困难负样本 2032, 随机负样本 871
+INFO:hard_negative_mining:使用策略构建困难负样本: ['semantic', 'keyword', 'tfidf', 'cross_domain']
+INFO:hard_negative_mining:开始基于语义相似度的困难负样本挖掘...
+INFO:hard_negative_mining:加载模型用于困难负样本挖掘: models/bge-large-zh-v1.5
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cuda:0
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: models/bge-large-zh-v1.5
+INFO:hard_negative_mining:编码文本...
+Batches: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 213/213 [00:42<00:00,  5.02it/s]
+INFO:hard_negative_mining:处理进度: 0/100
+INFO:hard_negative_mining:处理进度: 20/100
+INFO:hard_negative_mining:处理进度: 40/100
+INFO:hard_negative_mining:处理进度: 60/100
+INFO:hard_negative_mining:处理进度: 80/100
+INFO:hard_negative_mining:基于语义相似度挖掘到 200 个困难负样本
+INFO:hard_negative_mining:开始基于关键词重叠的困难负样本挖掘...
+Building prefix dict from the default dictionary ...
+DEBUG:jieba:Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+DEBUG:jieba:Loading model from cache /tmp/jieba.cache
+Loading model cost 0.613 seconds.
+DEBUG:jieba:Loading model cost 0.613 seconds.
+Prefix dict has been built successfully.
+DEBUG:jieba:Prefix dict has been built successfully.
+INFO:hard_negative_mining:基于关键词重叠挖掘到 138 个困难负样本
+INFO:hard_negative_mining:开始基于TF-IDF的困难负样本挖掘...
+INFO:hard_negative_mining:基于TF-IDF挖掘到 23 个困难负样本
+INFO:hard_negative_mining:开始构建跨子领域困难负样本...
+INFO:hard_negative_mining:构建跨子领域困难负样本 1999 个
+INFO:hard_negative_mining:总计生成 2360 个困难负样本
+INFO:hard_negative_mining:去重后保留 2137 个困难负样本
+INFO:hard_negative_mining:各策略生成数量: {'semantic': 200, 'keyword': 138, 'tfidf': 23, 'cross_domain': 1999}
+INFO:__main__:实际生成困难负样本: 2032 个
+INFO:hard_negative_mining:困难负样本分析已保存到: outputs/analysis/hard_negatives_analysis.json
+INFO:__main__:负样本构建完成: 总计 2903 个
+INFO:__main__:样本创建完成:
+INFO:__main__:  正样本: 4148 (58.8%)
+INFO:__main__:  负样本: 2903 (41.2%)
+INFO:__main__:  总计: 7051 个样本
+INFO:__main__:样本分析已保存到: outputs/analysis/sample_analysis.json
+INFO:__main__:数据集划分完成:
+INFO:__main__:  训练集: 4935 样本, 正样本比例: 0.588
+INFO:__main__:  验证集: 1058 样本, 正样本比例: 0.589
+INFO:__main__:  测试集: 1058 样本, 正样本比例: 0.588
+INFO:__main__:增强处理数据已保存到: outputs/data/enhanced_processed_datasets.json
+INFO:__main__:增强版数据准备流程完成
+INFO:__main__:============================================================
+
+增强版数据准备完成!
+训练集: 4935 样本
+验证集: 1058 样本
+测试集: 1058 样本
+
+查看详细分析: outputs/analysis/
+下一步运行: python model_training.py
