@@ -212,7 +212,7 @@ ALPHA = 0.7                # 向量检索权重
 
 > 机器学习领域专业问答，提供智能领域过滤、引用展示
 
-https://github.com/user-attachments/assets/ef17eec5-c2b7-45b9-bf66-62c519705b4a
+https://github.com/user-attachments/assets/360adecb-74cd-4629-89a8-c8339fb1bdc8
 
 ### 2. PDF文档问答
 
