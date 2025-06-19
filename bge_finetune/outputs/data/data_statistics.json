@@ -1,0 +1,9 @@
+{
+  "total_samples": 5502,
+  "train_samples": 3851,
+  "eval_samples": 825,
+  "test_samples": 826,
+  "positive_ratio": 0.625032459101532,
+  "articles_count": 827,
+  "qa_pairs_count": 1832
+}
