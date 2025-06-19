@@ -4,7 +4,6 @@
 
 一个端到端的RAG（检索增强生成）系统，通过爬取CSDN机器学习技术博客，对BGE模型进行领域专业化微调，最终实现高质量的机器学习知识问答和文档分析服务。
 
-
 ## 项目亮点
 
 - **智能数据采集**：爬取并筛选827篇高质量机器学习技术博客
@@ -209,13 +208,13 @@ https://github.com/user-attachments/assets/ef17eec5-c2b7-45b9-bf66-62c519705b4a
 
 > 上传文档进行智能问答，集成双粒度检索、混合重排序
 
-
+https://github.com/user-attachments/assets/b7d792ce-4e4c-47e0-a7f3-0e0c37dfbcc8
 
 ### 3. 知识库浏览
 
 > 浏览精选技术博客，支持多维搜索、统计展示
 
-
+https://github.com/user-attachments/assets/a508cd78-8ef8-4b83-94c6-d8ca97ab64d5
 
 ## 模块详解
 
