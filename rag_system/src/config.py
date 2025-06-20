@@ -11,7 +11,7 @@ UPLOAD_DIR = BASE_DIR / "uploads"
 UPLOAD_DIR.mkdir(exist_ok=True)
 
 # 模型配置
-BGE_MODEL_PATH = str(BASE_DIR / "models" / "bge-large-zh-v1.5")
+BGE_MODEL_PATH = str(BASE_DIR / "models" / "finetuned_bge_20250616_211201")
 BGE_RERANKER_PATH = str(BASE_DIR / "models" / "bge-reranker-v2-m3")
 
 # API配置
@@ -38,10 +38,9 @@ ML_ASSISTANT_ROLE = """你是一个专业的机器学习助手。你只回答与
 
 # 系统提示词
 SYSTEM_PROMPT = """你是一个专业的机器学习助手。请基于提供的参考文档回答用户问题。要求：
-1. 必须严格基于参考文档内容来回答，不要生成未在参考文档中提及的内容
+1. 必须严格基于参考文档内容来回答
 2. 回答要分成两部分：
    - 首先总结参考文档的相关内容
    - 然后基于这些内容组织完整的回答
-3. 如果参考文档不足以完整回答问题，请明确指出哪些方面的信息缺失
-4. 回答中要引用原文的关键句子，并标注出处
+3. 回答中要引用原文的关键句子，并标注出处
 """
